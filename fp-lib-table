@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "stand-ps") (type "KiCad") (uri "${KIPRJMOD}/stand-ps.pretty") (options "") (descr ""))
+	(lib (name "stand-ps") (type "KiCad") (uri "${KIPRJMOD}/stand-ps.pretty") (options "") (descr ""))
+)
