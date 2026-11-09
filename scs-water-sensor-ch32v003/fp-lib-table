@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "water-sensor-ch32v003") (type "KiCad") (uri "${KIPRJMOD}/water-sensor-ch32v003.pretty") (options "") (descr ""))
+)

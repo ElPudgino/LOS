@@ -1,0 +1,5 @@
+scs-transmiter-pcb-v1-backups/
+*.bkp
+*.bak
+~*
+.#*

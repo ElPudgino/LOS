@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Телеметрия септика</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script defer src="/static/vendor/chart.umd.js"></script>
+  <script defer src="/static/app.js"></script>
+</head>
+<body id="top">
+  <header class="page-header">
+    <div><h1>Телеметрия септика</h1></div>
+    <nav aria-label="Разделы"><a href="#current">Текущие показания</a><a href="#analysis">Анализ</a><a href="#thresholds">Калибровка порогов</a><a href="#settings">Настройки</a><a href="#events">События</a><a href="#history">Удаление истории</a></nav>
+  </header>
+  <main>
+    <section id="current" aria-labelledby="current-title">
+      <div class="section-heading"><h2 id="current-title">Текущие показания</h2><button id="refresh-current" type="button">Обновить</button></div>
+      <p id="current-status" class="status" role="status">Загрузка текущих данных...</p>
+      <div class="connection"><strong id="connection-state">Соединение неизвестно</strong><span id="connection-detail"></span></div>
+      <p class="mode-current">Режим: <strong id="current-mode">-</strong></p>
+      <div id="current-channels" class="cards"></div>
+      <p class="hint">Автообновление каждые 5 секунд. При ошибке API последние показания остаются на экране и могут быть устаревшими. "Последнее корректное" и BEAT показывают время сервера.</p>
+    </section>
+
+    <section id="analysis" aria-labelledby="analysis-title">
+      <h2 id="analysis-title">Анализ периода</h2>
+      <form id="period-form" class="period-form">
+        <label>Период<select id="period"><option value="3600">Последний час</option><option value="21600">Последние 6 часов</option><option value="86400" selected>Последние сутки</option><option value="604800">Последние 7 дней</option><option value="custom">Свой период</option></select></label>
+        <label>С <input id="period-start" type="datetime-local" step="1" required disabled></label>
+        <label>По <input id="period-end" type="datetime-local" step="1" required disabled></label>
+        <button id="load-analysis" type="submit">Показать</button>
+      </form>
+      <p class="hint">Даты в часовом поясе браузера: <span id="timezone"></span>. Анализ обновляется по кнопке и после сохранения настроек; история пересчитывается по текущим порогам и условиям режимов.</p>
+      <p id="analysis-status" class="status" role="status">Выберите период.</p>
+      <p id="chart-status" class="status error" role="alert" hidden></p>
+      <div id="analysis-results" hidden>
+        <p id="analysis-period" class="result-caption"></p>
+        <div class="legend" aria-label="Обозначения состояний"><span class="flow">Поток</span><span class="no_flow">Нет потока</span><span class="unknown">Не определено</span><span class="no_data">Нет данных</span></div>
+        <div id="channel-analysis"></div>
+        <article class="panel">
+          <h3>Режимы</h3>
+          <div class="legend"><span id="mode-1-legend" class="mode_1">Режим 1</span><span id="mode-2-legend" class="mode_2">Режим 2</span></div>
+          <div id="mode-timeline"></div>
+          <p id="mode-switches"></p>
+          <div id="mode-statistics"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="thresholds" aria-labelledby="thresholds-title">
+      <h2 id="thresholds-title">Калибровка порогов</h2>
+      <form id="thresholds-form" class="period-form">
+        <label>Период<select id="tperiod"><option value="3600">Последний час</option><option value="21600">Последние 6 часов</option><option value="86400" selected>Последние сутки</option><option value="604800">Последние 7 дней</option><option value="custom">Свой период</option></select></label>
+        <label>С <input id="tperiod-start" type="datetime-local" step="1" required disabled></label>
+        <label>По <input id="tperiod-end" type="datetime-local" step="1" required disabled></label>
+        <label>Шкала<select id="taxis"><option value="logarithmic" selected>Логарифмическая</option><option value="linear">Линейная</option></select></label>
+        <button id="load-thresholds" type="submit">Рассчитать</button>
+      </form>
+      <p class="hint">Гистограмма значений за период по каждому каналу. Рекомендуемый порог T ставится в зону минимальной плотности между двумя основными кластерами; полоса гистерезиса [T - H/2, T + H/2] покрывает эту зону: включение строго выше полосы, выключение строго ниже. Переходные значения при переключении клапана остаются внутри полосы. Рекомендация — отправная точка: проверьте её по гистограмме и перенесите в «Настройки». Логарифмическая шкала не даёт высокому бару у нуля перекрывать остальные значения; точное число измерений — в подсказке при наведении.</p>
+      <p id="thresholds-status" class="status" role="status">Выберите период.</p>
+      <p id="thresholds-chart-status" class="status error" role="alert" hidden></p>
+      <div id="thresholds-results" hidden>
+        <p id="thresholds-period" class="result-caption"></p>
+        <div class="legend" aria-label="Обозначения"><span style="background:#185d9b">Значения</span><span style="background:#9d3d1c">T (рекомендация)</span><span style="background:rgba(181, 122, 25, 0.25)">Полоса гистерезиса</span></div>
+        <div id="channel-thresholds"></div>
+      </div>
+    </section>
+
+    <section id="settings" aria-labelledby="settings-title">
+      <h2 id="settings-title">Настройки</h2>
+      <p class="notice"><strong>Начальные T = 10 и H = 2 служат примером, а не калибровкой.</strong> Реальные пороги нужно определить испытаниями с известным наличием и отсутствием потока. Показания датчиков на столе сами по себе не подтверждают поток. Автоматическая калибровка не выполняется.</p>
+      <p class="hint">Поток включается строго выше T + H/2, выключается строго ниже T - H/2. Между границами и на них сохраняется предыдущее состояние. До первого выхода за границы и после тайм-аута состояние неизвестно.</p>
+      <p id="settings-status" class="status" role="status">Загрузка настроек...</p>
+      <button id="retry-settings" type="button" hidden>Повторить загрузку настроек</button>
+      <form id="settings-form" hidden>
+        <fieldset id="settings-fields">
+          <legend>Подключение и обработка</legend>
+          <div class="settings-connection"><label>Последовательный порт<input id="port" name="port" type="text" required placeholder="/dev/ttyACM0" autocomplete="off"></label><label class="checkbox"><input id="network-access" name="network_access" type="checkbox"> Доступ из домашней сети</label></div>
+          <p class="hint">Изменение сетевого доступа требует перезапуска сервиса. Авторизации нет: не публикуйте сервис в интернете.</p>
+          <div id="channel-settings" class="settings-grid"></div>
+          <h3>Условия режимов</h3>
+          <p class="hint">Режим определяется, только если подходит ровно один набор условий. Совпадение обоих, отсутствие совпадений и недостаток данных дают неопределённый режим.</p>
+          <div id="mode-settings" class="settings-grid modes-grid"></div>
+        </fieldset>
+        <button id="save-settings" type="submit">Сохранить настройки</button>
+      </form>
+      <p id="restart-notice" class="notice" role="status" hidden>Настройка сетевого доступа сохранена. Для её применения перезапустите сервис.</p>
+    </section>
+
+    <section id="events" aria-labelledby="events-title">
+      <div class="section-heading"><h2 id="events-title">Диагностические события</h2><button id="refresh-events" type="button">Обновить</button></div>
+      <p class="hint">Последние 100 событий без BEAT, опрос каждые 15 секунд. SEQ помогает замечать пропуски, но не восстанавливает данные; перезапуск датчика и оборот счётчика ограничивают диагностику. Пропуски и ошибки не означают нулевое показание.</p>
+      <p id="events-status" class="status" role="status">Загрузка событий...</p>
+      <div id="events-table"></div>
+    </section>
+
+    <section id="history" aria-labelledby="history-title">
+      <h2 id="history-title">Удаление истории</h2>
+      <p class="notice">Удаляются измерения и диагностические события. Настройки сохраняются. Удаление необратимо, автоматическая резервная копия не создаётся.</p>
+      <p id="history-help" class="hint">Период удаления независим от периода анализа. Даты задаются в часовом поясе браузера. Интервал [start, end): начало включается, конец не включается. Группы измерений удаляются целиком по времени получения, события по времени события. Сбор данных продолжается: новые значения могут появиться сразу после удаления.</p>
+      <form id="history-form" aria-describedby="history-help">
+        <fieldset id="history-fields" class="period-form">
+          <legend>Область удаления</legend>
+          <label>Удалить<select id="history-scope"><option value="all">Всю историю</option><option value="period">За период</option></select></label>
+          <label>С (включительно)<input id="history-start" type="datetime-local" step="1" required disabled></label>
+          <label>До (не включительно)<input id="history-end" type="datetime-local" step="1" required disabled></label>
+          <button type="submit" class="danger">Удалить историю...</button>
+        </fieldset>
+      </form>
+      <p id="history-status" class="status" role="status"></p>
+    </section>
+  </main>
+  <a class="back-to-top" href="#top" aria-label="Наверх" title="Наверх">&#8593;</a>
+  <noscript><p class="notice error">Для работы интерфейса необходим JavaScript.</p></noscript>
+</body>
+</html>

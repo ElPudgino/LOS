@@ -1,0 +1,5 @@
+water-sensor-ch32v003-backups/
+*.bkp
+*.bak
+~*
+.#*

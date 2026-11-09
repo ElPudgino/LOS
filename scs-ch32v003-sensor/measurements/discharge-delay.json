@@ -1,0 +1,171 @@
+{
+  "method": "Paired reference/test captures, 64 warmup pairs then 4096 recorded pairs per run. Charge hold fixed at 1200. Reference receives at least 2400 discharge hold iterations. Test repeats production forced-GPIO discharge with its compiled delay, immediately followed by GPIO input configuration and timer initialization/capture; no histogram work between them. UART disabled; RAM read only after collection. Flash readback verified for all runs.",
+  "selected_discharge_loops": 0,
+  "limits": "Only current fixed sensor, MCU, wiring, supply and ambient conditions were tested; no assertion of instant analogue settling or validity for arbitrary capacitance.",
+  "runs": [
+    {
+      "label": "discharge-baseline",
+      "discharge_loops": 2400,
+      "charge_loops": 1200,
+      "pairs": 4096,
+      "reference_charge_mean": 11.00439453125,
+      "test_charge_mean": 11.003662109375,
+      "paired_mean_difference": -0.000732421875,
+      "test_discharge_mean": 14.92919921875,
+      "reference_charge_range": [
+        11,
+        12
+      ],
+      "test_charge_range": [
+        11,
+        12
+      ],
+      "test_discharge_range": [
+        14,
+        15
+      ],
+      "histogram_outside": [
+        0,
+        0,
+        0
+      ],
+      "reference_charge_hist": {
+        "11": 4078,
+        "12": 18
+      },
+      "test_charge_hist": {
+        "11": 4081,
+        "12": 15
+      },
+      "test_discharge_hist": {
+        "14": 290,
+        "15": 3806
+      },
+      "session_seconds": 21.90016012400156,
+      "flash_verified": true
+    },
+    {
+      "label": "discharge-zero-a",
+      "discharge_loops": 0,
+      "charge_loops": 1200,
+      "pairs": 4096,
+      "reference_charge_mean": 11.00390625,
+      "test_charge_mean": 11.003662109375,
+      "paired_mean_difference": -0.000244140625,
+      "test_discharge_mean": 14.9306640625,
+      "reference_charge_range": [
+        11,
+        12
+      ],
+      "test_charge_range": [
+        11,
+        12
+      ],
+      "test_discharge_range": [
+        14,
+        15
+      ],
+      "histogram_outside": [
+        0,
+        0,
+        0
+      ],
+      "reference_charge_hist": {
+        "11": 4080,
+        "12": 16
+      },
+      "test_charge_hist": {
+        "11": 4081,
+        "12": 15
+      },
+      "test_discharge_hist": {
+        "14": 284,
+        "15": 3812
+      },
+      "session_seconds": 21.99799294300101,
+      "flash_verified": true
+    },
+    {
+      "label": "discharge-16",
+      "discharge_loops": 16,
+      "charge_loops": 1200,
+      "pairs": 4096,
+      "reference_charge_mean": 11.003173828125,
+      "test_charge_mean": 11.002197265625,
+      "paired_mean_difference": -0.0009765625,
+      "test_discharge_mean": 14.920654296875,
+      "reference_charge_range": [
+        11,
+        12
+      ],
+      "test_charge_range": [
+        11,
+        12
+      ],
+      "test_discharge_range": [
+        14,
+        15
+      ],
+      "histogram_outside": [
+        0,
+        0,
+        0
+      ],
+      "reference_charge_hist": {
+        "11": 4083,
+        "12": 13
+      },
+      "test_charge_hist": {
+        "11": 4087,
+        "12": 9
+      },
+      "test_discharge_hist": {
+        "14": 325,
+        "15": 3771
+      },
+      "session_seconds": 21.89994347099855,
+      "flash_verified": true
+    },
+    {
+      "label": "discharge-zero-b",
+      "discharge_loops": 0,
+      "charge_loops": 1200,
+      "pairs": 4096,
+      "reference_charge_mean": 11.003173828125,
+      "test_charge_mean": 11.00341796875,
+      "paired_mean_difference": 0.000244140625,
+      "test_discharge_mean": 14.919189453125,
+      "reference_charge_range": [
+        11,
+        12
+      ],
+      "test_charge_range": [
+        11,
+        12
+      ],
+      "test_discharge_range": [
+        14,
+        15
+      ],
+      "histogram_outside": [
+        0,
+        0,
+        0
+      ],
+      "reference_charge_hist": {
+        "11": 4083,
+        "12": 13
+      },
+      "test_charge_hist": {
+        "11": 4082,
+        "12": 14
+      },
+      "test_discharge_hist": {
+        "14": 331,
+        "15": 3765
+      },
+      "session_seconds": 22.157901266000408,
+      "flash_verified": true
+    }
+  ]
+}

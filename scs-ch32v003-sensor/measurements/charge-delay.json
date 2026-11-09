@@ -1,0 +1,856 @@
+{
+  "conditions": {
+    "mode": 4,
+    "discharge_loops": 2400,
+    "sensor": "fixed by user throughout experiment; current capacitance and supply voltage not independently measured",
+    "timer_hz_nominal": 24000000,
+    "capture_start_delay_ticks": 8
+  },
+  "method": "Long references interleaved with shorter waits. Fixed sweeps use runtime delays in one binary, warmup 64 captures per stage. All saved rows completed and histogram totals matched. A separate interrupted initial fixed sweep is excluded. Counter means include start delay and capture latency.",
+  "selected_charge_loops": 1200,
+  "selection": "Conservative working value, not a proven physical minimum. Short waits shift means by hundredths of a tick, and response is not strictly monotonic. Maximum wet capacitance, temperature and supply range not tested.",
+  "fixed_sweeps": [
+    {
+      "label": "fixed-sweep-plateau",
+      "session_seconds": 56.50787775600111,
+      "rows": [
+        {
+          "stage": 0,
+          "charge_loops": 2400,
+          "samples": 2048,
+          "charge_sum": 22540,
+          "discharge_sum": 30582,
+          "charge_mean": 11.005859375,
+          "discharge_mean": 14.9326171875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 138,
+            "15": 1910
+          }
+        },
+        {
+          "stage": 1,
+          "charge_loops": 0,
+          "samples": 2048,
+          "charge_sum": 22534,
+          "discharge_sum": 30525,
+          "charge_mean": 11.0029296875,
+          "discharge_mean": 14.90478515625,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 195,
+            "15": 1853
+          }
+        },
+        {
+          "stage": 2,
+          "charge_loops": 2400,
+          "samples": 2048,
+          "charge_sum": 22535,
+          "discharge_sum": 30578,
+          "charge_mean": 11.00341796875,
+          "discharge_mean": 14.9306640625,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 142,
+            "15": 1906
+          }
+        },
+        {
+          "stage": 3,
+          "charge_loops": 36,
+          "samples": 2048,
+          "charge_sum": 22541,
+          "discharge_sum": 30532,
+          "charge_mean": 11.00634765625,
+          "discharge_mean": 14.908203125,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 188,
+            "15": 1860
+          }
+        },
+        {
+          "stage": 4,
+          "charge_loops": 2400,
+          "samples": 2048,
+          "charge_sum": 22535,
+          "discharge_sum": 30572,
+          "charge_mean": 11.00341796875,
+          "discharge_mean": 14.927734375,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 148,
+            "15": 1900
+          }
+        },
+        {
+          "stage": 5,
+          "charge_loops": 75,
+          "samples": 2048,
+          "charge_sum": 22534,
+          "discharge_sum": 30509,
+          "charge_mean": 11.0029296875,
+          "discharge_mean": 14.89697265625,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 211,
+            "15": 1837
+          }
+        },
+        {
+          "stage": 6,
+          "charge_loops": 2400,
+          "samples": 2048,
+          "charge_sum": 22542,
+          "discharge_sum": 30566,
+          "charge_mean": 11.0068359375,
+          "discharge_mean": 14.9248046875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 154,
+            "15": 1894
+          }
+        },
+        {
+          "stage": 7,
+          "charge_loops": 150,
+          "samples": 2048,
+          "charge_sum": 22539,
+          "discharge_sum": 30553,
+          "charge_mean": 11.00537109375,
+          "discharge_mean": 14.91845703125,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 167,
+            "15": 1881
+          }
+        },
+        {
+          "stage": 8,
+          "charge_loops": 2400,
+          "samples": 2048,
+          "charge_sum": 22541,
+          "discharge_sum": 30586,
+          "charge_mean": 11.00634765625,
+          "discharge_mean": 14.9345703125,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 134,
+            "15": 1914
+          }
+        },
+        {
+          "stage": 9,
+          "charge_loops": 300,
+          "samples": 2048,
+          "charge_sum": 22535,
+          "discharge_sum": 30575,
+          "charge_mean": 11.00341796875,
+          "discharge_mean": 14.92919921875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 145,
+            "15": 1903
+          }
+        },
+        {
+          "stage": 10,
+          "charge_loops": 2400,
+          "samples": 2048,
+          "charge_sum": 22536,
+          "discharge_sum": 30560,
+          "charge_mean": 11.00390625,
+          "discharge_mean": 14.921875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 160,
+            "15": 1888
+          }
+        },
+        {
+          "stage": 11,
+          "charge_loops": 600,
+          "samples": 2048,
+          "charge_sum": 22539,
+          "discharge_sum": 30548,
+          "charge_mean": 11.00537109375,
+          "discharge_mean": 14.916015625,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 172,
+            "15": 1876
+          }
+        },
+        {
+          "stage": 12,
+          "charge_loops": 2400,
+          "samples": 2048,
+          "charge_sum": 22536,
+          "discharge_sum": 30569,
+          "charge_mean": 11.00390625,
+          "discharge_mean": 14.92626953125,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 151,
+            "15": 1897
+          }
+        },
+        {
+          "stage": 13,
+          "charge_loops": 1200,
+          "samples": 2048,
+          "charge_sum": 22536,
+          "discharge_sum": 30576,
+          "charge_mean": 11.00390625,
+          "discharge_mean": 14.9296875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 144,
+            "15": 1904
+          }
+        },
+        {
+          "stage": 14,
+          "charge_loops": 2400,
+          "samples": 2048,
+          "charge_sum": 22534,
+          "discharge_sum": 30558,
+          "charge_mean": 11.0029296875,
+          "discharge_mean": 14.9208984375,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 162,
+            "15": 1886
+          }
+        }
+      ]
+    },
+    {
+      "label": "fixed-sweep-confirm",
+      "session_seconds": 62.59413997000229,
+      "rows": [
+        {
+          "stage": 0,
+          "charge_loops": 2400,
+          "samples": 8192,
+          "charge_sum": 90145,
+          "discharge_sum": 122277,
+          "charge_mean": 11.0040283203125,
+          "discharge_mean": 14.9263916015625,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 603,
+            "15": 7589
+          }
+        },
+        {
+          "stage": 1,
+          "charge_loops": 150,
+          "samples": 8192,
+          "charge_sum": 90137,
+          "discharge_sum": 122109,
+          "charge_mean": 11.0030517578125,
+          "discharge_mean": 14.9058837890625,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 771,
+            "15": 7421
+          }
+        },
+        {
+          "stage": 2,
+          "charge_loops": 2400,
+          "samples": 8192,
+          "charge_sum": 90138,
+          "discharge_sum": 122336,
+          "charge_mean": 11.003173828125,
+          "discharge_mean": 14.93359375,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 544,
+            "15": 7648
+          }
+        },
+        {
+          "stage": 3,
+          "charge_loops": 300,
+          "samples": 8192,
+          "charge_sum": 90147,
+          "discharge_sum": 122145,
+          "charge_mean": 11.0042724609375,
+          "discharge_mean": 14.9102783203125,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 735,
+            "15": 7457
+          }
+        },
+        {
+          "stage": 4,
+          "charge_loops": 2400,
+          "samples": 8192,
+          "charge_sum": 90140,
+          "discharge_sum": 122319,
+          "charge_mean": 11.00341796875,
+          "discharge_mean": 14.9315185546875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 561,
+            "15": 7631
+          }
+        }
+      ]
+    },
+    {
+      "label": "fixed-sweep-600-1200",
+      "session_seconds": 53.345957787998486,
+      "rows": [
+        {
+          "stage": 0,
+          "charge_loops": 2400,
+          "samples": 4096,
+          "charge_sum": 45073,
+          "discharge_sum": 61152,
+          "charge_mean": 11.004150390625,
+          "discharge_mean": 14.9296875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 288,
+            "15": 3808
+          }
+        },
+        {
+          "stage": 1,
+          "charge_loops": 600,
+          "samples": 4096,
+          "charge_sum": 45073,
+          "discharge_sum": 61143,
+          "charge_mean": 11.004150390625,
+          "discharge_mean": 14.927490234375,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 297,
+            "15": 3799
+          }
+        },
+        {
+          "stage": 2,
+          "charge_loops": 2400,
+          "samples": 4096,
+          "charge_sum": 45073,
+          "discharge_sum": 61147,
+          "charge_mean": 11.004150390625,
+          "discharge_mean": 14.928466796875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 293,
+            "15": 3803
+          }
+        },
+        {
+          "stage": 3,
+          "charge_loops": 900,
+          "samples": 4096,
+          "charge_sum": 45074,
+          "discharge_sum": 61093,
+          "charge_mean": 11.00439453125,
+          "discharge_mean": 14.915283203125,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 347,
+            "15": 3749
+          }
+        },
+        {
+          "stage": 4,
+          "charge_loops": 2400,
+          "samples": 4096,
+          "charge_sum": 45076,
+          "discharge_sum": 61158,
+          "charge_mean": 11.0048828125,
+          "discharge_mean": 14.93115234375,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 282,
+            "15": 3814
+          }
+        },
+        {
+          "stage": 5,
+          "charge_loops": 1200,
+          "samples": 4096,
+          "charge_sum": 45075,
+          "discharge_sum": 61120,
+          "charge_mean": 11.004638671875,
+          "discharge_mean": 14.921875,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 320,
+            "15": 3776
+          }
+        },
+        {
+          "stage": 6,
+          "charge_loops": 2400,
+          "samples": 4096,
+          "charge_sum": 45079,
+          "discharge_sum": 61127,
+          "charge_mean": 11.005615234375,
+          "discharge_mean": 14.923583984375,
+          "charge_min": 11,
+          "charge_max": 12,
+          "discharge_min": 14,
+          "discharge_max": 15,
+          "histogram_outside": 0,
+          "discharge_hist": {
+            "14": 313,
+            "15": 3783
+          }
+        }
+      ]
+    }
+  ],
+  "preliminary_separately_compiled_trials": [
+    {
+      "label": "baseline-initial",
+      "charge_loops": 2400,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.00341796875,
+      "discharge_mean": 14.921875,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2041,
+        "12": 7
+      },
+      "discharge_hist": {
+        "14": 160,
+        "15": 1888
+      },
+      "session_seconds": 17.160512719998223,
+      "flash_verified": true
+    },
+    {
+      "label": "coarse-300",
+      "charge_loops": 300,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.001953125,
+      "discharge_mean": 14.92626953125,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2044,
+        "12": 4
+      },
+      "discharge_hist": {
+        "14": 151,
+        "15": 1897
+      },
+      "session_seconds": 14.00599085399881,
+      "flash_verified": true
+    },
+    {
+      "label": "coarse-36",
+      "charge_loops": 36,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.0009765625,
+      "discharge_mean": 14.927734375,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2046,
+        "12": 2
+      },
+      "discharge_hist": {
+        "14": 148,
+        "15": 1900
+      },
+      "session_seconds": 14.018242829999508,
+      "flash_verified": true
+    },
+    {
+      "label": "coarse-4",
+      "charge_loops": 4,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.0029296875,
+      "discharge_mean": 14.916015625,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2042,
+        "12": 6
+      },
+      "discharge_hist": {
+        "14": 172,
+        "15": 1876
+      },
+      "session_seconds": 13.828319372998521,
+      "flash_verified": true
+    },
+    {
+      "label": "coarse-0",
+      "charge_loops": 0,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.0029296875,
+      "discharge_mean": 14.89794921875,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2042,
+        "12": 6
+      },
+      "discharge_hist": {
+        "14": 209,
+        "15": 1839
+      },
+      "session_seconds": 14.002284997997776,
+      "flash_verified": true
+    },
+    {
+      "label": "baseline-after-coarse",
+      "charge_loops": 2400,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.00634765625,
+      "discharge_mean": 14.93017578125,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2035,
+        "12": 13
+      },
+      "discharge_hist": {
+        "14": 143,
+        "15": 1905
+      },
+      "session_seconds": 13.850630331999128,
+      "flash_verified": true
+    },
+    {
+      "label": "fine-9-a",
+      "charge_loops": 9,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.00146484375,
+      "discharge_mean": 14.92138671875,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2045,
+        "12": 3
+      },
+      "discharge_hist": {
+        "14": 161,
+        "15": 1887
+      },
+      "session_seconds": 13.892137610000646,
+      "flash_verified": true
+    },
+    {
+      "label": "fine-1-a",
+      "charge_loops": 1,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.001953125,
+      "discharge_mean": 14.919921875,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2044,
+        "12": 4
+      },
+      "discharge_hist": {
+        "14": 164,
+        "15": 1884
+      },
+      "session_seconds": 13.9858768769991,
+      "flash_verified": true
+    },
+    {
+      "label": "baseline-middle",
+      "charge_loops": 2400,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.001953125,
+      "discharge_mean": 14.93212890625,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2044,
+        "12": 4
+      },
+      "discharge_hist": {
+        "14": 139,
+        "15": 1909
+      },
+      "session_seconds": 13.870801856999606,
+      "flash_verified": true
+    },
+    {
+      "label": "fine-2-a",
+      "charge_loops": 2,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.0029296875,
+      "discharge_mean": 14.92333984375,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2042,
+        "12": 6
+      },
+      "discharge_hist": {
+        "14": 157,
+        "15": 1891
+      },
+      "session_seconds": 13.987283408998337,
+      "flash_verified": true
+    },
+    {
+      "label": "fine-4-b",
+      "charge_loops": 4,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.0048828125,
+      "discharge_mean": 14.90869140625,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2038,
+        "12": 10
+      },
+      "discharge_hist": {
+        "14": 187,
+        "15": 1861
+      },
+      "session_seconds": 13.874019634000433,
+      "flash_verified": true
+    },
+    {
+      "label": "fine-0-b",
+      "charge_loops": 0,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.00244140625,
+      "discharge_mean": 14.8798828125,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2043,
+        "12": 5
+      },
+      "discharge_hist": {
+        "14": 246,
+        "15": 1802
+      },
+      "session_seconds": 13.860963712999364,
+      "flash_verified": true
+    },
+    {
+      "label": "baseline-final",
+      "charge_loops": 2400,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.00537109375,
+      "discharge_mean": 14.9296875,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2037,
+        "12": 11
+      },
+      "discharge_hist": {
+        "14": 144,
+        "15": 1904
+      },
+      "session_seconds": 13.856248191001214,
+      "flash_verified": true
+    },
+    {
+      "label": "fine-9-b",
+      "charge_loops": 9,
+      "discharge_loops": 2400,
+      "samples": 2048,
+      "charge_mean": 11.001953125,
+      "discharge_mean": 14.90576171875,
+      "charge_min": 11,
+      "charge_max": 12,
+      "discharge_min": 14,
+      "discharge_max": 15,
+      "charge_overflow": 0,
+      "discharge_overflow": 0,
+      "charge_hist": {
+        "11": 2044,
+        "12": 4
+      },
+      "discharge_hist": {
+        "14": 193,
+        "15": 1855
+      },
+      "session_seconds": 13.959110375999444,
+      "flash_verified": true
+    }
+  ]
+}

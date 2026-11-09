@@ -1,0 +1,5 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "scs-transmiter-pcb-v1") (type "KiCad") (uri "/srv/np/projects/personal/igor/septic-ctrl-system-repos/scs-transmiter-pcb-v1/scs-transmiter-pcb-v1.kicad_sym") (options "") (descr ""))
+	(lib (name "local") (type "KiCad") (uri "/srv/np/projects/personal/igor/septic-ctrl-system-repos/scs-transmiter-pcb-v1/local.kicad_sym") (options "") (descr ""))
+)

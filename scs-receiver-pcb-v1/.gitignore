@@ -1,0 +1,5 @@
+scs-receiver-pcb-v1-backups/
+*.bkp
+*.bak
+~*
+.#*

@@ -1,0 +1,116 @@
+{
+  "configuration": {
+    "mode": 4,
+    "samples_per_block": 16,
+    "blocks_per_window": 128,
+    "charge_loops": 1200,
+    "discharge_loops": 0,
+    "standby": true,
+    "awu_prescaler": 64,
+    "awu_window": 22,
+    "nominal_lsi_hz": 128000,
+    "nominal_sleep_ms": 11.5,
+    "uart_baud": 9600
+  },
+  "hardware_checks": {
+    "USER_low_byte": "0x17; bit2=1, no reset on Standby",
+    "DBGMCU_CR_CSR_0x7c0": "0x00000000 before test"
+  },
+  "method": "One Ardulink session per run: reset/run, DMSTATUS reads only during collection, halt once and read RAM, reboot/run again. Period estimated from host first/last DMSTATUS timestamps and completed block count. No serial UART receiver or current meter used.",
+  "limits": "Host endpoint/debug uncertainty is approximately one block. Debug register reads often return all ones while clocks are stopped; these are not valid chip status samples. Block/window counters and snapshot integrity were validated after wake/halt. UART transfer across sleep and flow sensitivity still require validation.",
+  "subsequent_user_power_measurement": {
+    "supply_volts": 3,
+    "whole_board_before_ma": 6,
+    "whole_board_after_ma": 1.5,
+    "reduction_factor": 4,
+    "source": "Reported by user after flashing Standby firmware; meter setup not independently verified."
+  },
+  "firmware_sha256": "2c813f6b3394087eaeb9a6740f1e7a51a1e4538d1b79db2154e040bb9ce256de",
+  "runs": [
+    {
+      "label": "before-standby",
+      "dmstatus_reads": 6000,
+      "observation_seconds": 5.549131698000565,
+      "values": {
+        "completed": 1313,
+        "windows_completed": 10,
+        "charge_count": 176,
+        "discharge_count": 238
+      },
+      "estimated_block_ms": 4.2262998461542765,
+      "estimated_window_s": 0.5409663803077474,
+      "dmstatus_values": {
+        "004c0c82, 0": 6000
+      },
+      "timing_note": "Host first/last DMSTATUS timestamps vs count since reboot; approximately one-block endpoint uncertainty, serial/debug overhead. Not a power measurement."
+    },
+    {
+      "label": "standby-window23-a",
+      "dmstatus_reads": 6000,
+      "observation_seconds": 5.404958031002025,
+      "values": {
+        "completed": 317,
+        "windows_completed": 2,
+        "charge_count": 176,
+        "discharge_count": 238,
+        "standby_wakeups": 317,
+        "standby_wake_flags": 0,
+        "standby_fault": 0
+      },
+      "estimated_block_ms": 17.050340791804494,
+      "estimated_window_s": 2.1824436213509752,
+      "dmstatus_values": {
+        "7fffffff, 0": 1159,
+        "004c0c82, 0": 404,
+        "00260641, 0": 1,
+        "ffffffff, 0": 4436
+      },
+      "timing_note": "Host first/last DMSTATUS timestamps vs count since reboot; approximately one-block endpoint uncertainty, serial/debug overhead. Not a power measurement."
+    },
+    {
+      "label": "standby-window22-a",
+      "dmstatus_reads": 6000,
+      "observation_seconds": 5.48035333900043,
+      "values": {
+        "completed": 332,
+        "windows_completed": 2,
+        "charge_count": 176,
+        "discharge_count": 239,
+        "standby_wakeups": 331,
+        "standby_wake_flags": 0,
+        "standby_fault": 0
+      },
+      "estimated_block_ms": 16.507088370483224,
+      "estimated_window_s": 2.1129073114218526,
+      "dmstatus_values": {
+        "7fffffff, 0": 4366,
+        "004c0c82, 0": 1634
+      },
+      "timing_note": "Host first/last DMSTATUS timestamps vs count since reboot; approximately one-block endpoint uncertainty, serial/debug overhead. Not a power measurement."
+    },
+    {
+      "mstatus": 8394752,
+      "ram_wake_code_verified": true,
+      "label": "standby-window22-long",
+      "dmstatus_reads": 12000,
+      "observation_seconds": 10.672323329999927,
+      "values": {
+        "completed": 646,
+        "windows_completed": 5,
+        "charge_count": 176,
+        "discharge_count": 239,
+        "standby_wakeups": 645,
+        "standby_wake_flags": 0,
+        "standby_fault": 0
+      },
+      "estimated_block_ms": 16.520624349845086,
+      "estimated_window_s": 2.1146399167801713,
+      "dmstatus_values": {
+        "7fffffff, 0": 852,
+        "004c0c82, 0": 314,
+        "ffffffff, 0": 10834
+      },
+      "timing_note": "Host first/last DMSTATUS timestamps vs count since reboot; approximately one-block endpoint uncertainty, serial/debug overhead. Not a power measurement."
+    }
+  ]
+}

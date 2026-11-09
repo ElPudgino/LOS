@@ -1,0 +1,23 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,10.0.4*
+G04 #@! TF.CreationDate,2026-10-26T18:33:56+03:00*
+G04 #@! TF.ProjectId,scs-transmiter-pcb-v1,7363732d-7472-4616-9e73-6d697465722d,rev?*
+G04 #@! TF.SameCoordinates,PX7de2900PY5742de0*
+G04 #@! TF.FileFunction,Profile,NP*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 10.0.4) date 2026-10-26 18:33:56*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 #@! TA.AperFunction,Profile*
+%ADD10C,0.050000*%
+G04 #@! TD*
+G04 APERTURE END LIST*
+D10*
+X0Y45000000D02*
+X53000000Y45000000D01*
+X53000000Y0D01*
+X0Y0D01*
+X0Y45000000D01*
+M02*

@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "scs-transmiter-pcb-v1") (type "KiCad") (uri "${KIPRJMOD}/scs-receiver-pcb-v1.pretty") (options "") (descr ""))
+)
